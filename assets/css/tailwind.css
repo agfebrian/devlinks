@@ -3,7 +3,7 @@
   src:
     url("../fonts/InstrumentSans-Regular.ttf") format("opentype"),
     url("../fonts/InstrumentSans-SemiBold.ttf") format("opentype"),
-    url("../fonts/InstrumentSans-Bold.ttf") format("opentype");
+    url("../fonts/InstrumentSans-Bold.ttf") format("opentype"),
 }
 
 @tailwind base;

@@ -32,7 +32,7 @@
   },
   "lint-staged": {
     "*.{vue,js,ts,cjs,yml}": "eslint --cache --fix",
-    "*.{vue,js,ts,cjs,css,yml,md}": "prettier --write"
+    "*.{vue,js,ts,cjs,yml,md}": "prettier --write"
   },
   "dependencies": {
     "vee-validate": "^4.11.1"
