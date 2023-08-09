@@ -20,4 +20,13 @@ export default defineNuxtPlugin((_nuxtApp) => {
     }
     return true;
   });
+
+  defineRule("confirmed", (value: string, target: string[]) => {
+    const [context] = target;
+    if (value === context) {
+      return true;
+    }
+
+    return "Please check again";
+  });
 });
