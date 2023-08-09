@@ -13,7 +13,7 @@
       :placeholder="placeholder"
       :class="[
         borderError,
-        'flex-1 rounded-lg border border-grey-hover py-[11px] pl-11 pr-4 text-base text-grey-dark outline-none focus:border-primary-default focus:shadow-input',
+        'flex-1 rounded-lg border py-[11px] pl-11 pr-4 text-base text-grey-dark outline-none',
       ]"
     />
     <div
@@ -56,6 +56,7 @@ const value = computed({
 const borderError = computed(() => {
   if (props.error)
     return "border-danger-default focus:border-danger-default focus:shadow-none";
-  else return "";
+  else
+    return "border-grey-hover focus:border-primary-default focus:shadow-input";
 });
 </script>
