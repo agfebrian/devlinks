@@ -15,7 +15,6 @@
         </div>
         <!-- content -->
         <form-v-validate @submit="handleSubmit" v-slot="{ errors }">
-          <field-custom name="email" rules="required" v-model="email" />
           <div class="flex flex-col gap-6">
             <div class="flex flex-col gap-1">
               <app-label
