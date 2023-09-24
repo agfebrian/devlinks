@@ -17,5 +17,10 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-headlessui", "@nuxtjs/eslint-module"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-headlessui",
+    "@nuxtjs/eslint-module",
+    "@pinia/nuxt",
+  ],
 });

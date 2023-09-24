@@ -35,6 +35,12 @@
     "*.{vue,js,ts,cjs,yml,md}": "prettier --write"
   },
   "dependencies": {
-    "vee-validate": "^4.11.1"
+    "@pinia/nuxt": "^0.4.11",
+    "pinia": "^2.1.6",
+    "vee-validate": "^4.11.1",
+    "vuedraggable": "^4.1.0"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

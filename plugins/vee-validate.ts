@@ -30,3 +30,12 @@ export default defineNuxtPlugin((_nuxtApp) => {
     return "Please check again";
   });
 });
+
+defineRule("match", (value: string, target: string[]) => {
+  const [context] = target;
+  if (value.match(context)) {
+    return true;
+  }
+
+  return "Please check again";
+});
