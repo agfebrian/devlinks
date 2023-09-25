@@ -6,6 +6,7 @@
       </slot>
     </div>
     <field-v-validate
+      :id="id"
       :name="name"
       :type="type"
       v-model="value"
@@ -13,7 +14,7 @@
       :placeholder="placeholder"
       :class="[
         borderError,
-        'flex-1 rounded-lg border py-[11px] pl-11 pr-4 text-base text-grey-dark outline-none',
+        'flex-1 rounded-lg border py-3 pl-11 pr-4 text-base text-grey-dark outline-none',
       ]"
     />
     <div
@@ -30,6 +31,7 @@ import { Field as FieldVValidate } from "vee-validate";
 
 interface Props {
   modelValue: string;
+  id?: string;
   name?: string;
   type?: string;
   required?: string;
@@ -38,6 +40,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  id: "",
   name: "",
   type: "text",
   required: "",

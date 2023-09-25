@@ -18,6 +18,7 @@ module.exports = {
         danger: {
           default: "#FF3939",
         },
+        skeleton: "#EEEEEE",
       },
       boxShadow: {
         input: "0px 0px 32px 0px rgba(99, 60, 255, 0.25)",
