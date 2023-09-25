@@ -31,11 +31,11 @@ export default defineNuxtPlugin((_nuxtApp) => {
   });
 });
 
-defineRule("match", (value: string, target: string[]) => {
+defineRule("matchUrl", (value: string, target: string[]) => {
   const [context] = target;
   if (value.match(context)) {
     return true;
   }
 
-  return "Please check again";
+  return "Please check the URL";
 });

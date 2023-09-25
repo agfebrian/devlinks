@@ -77,7 +77,7 @@
                           :id="`link${i}`"
                           :name="`link${i}`"
                           v-model="item.link"
-                          :required="`required|match:https://www.${item.platform.value}.com/`"
+                          :required="`required|matchUrl:https://www.${item.platform.value}.com/`"
                           :error="errors[`link${i}`]"
                           :placeholder="`e.g. https://www.${item.platform.value}.com/`"
                         >
