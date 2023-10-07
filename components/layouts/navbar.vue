@@ -28,7 +28,7 @@
           <span class="hidden md:block">{{ item.text }}</span>
         </app-button>
       </div>
-      <app-button variant="outlined">
+      <app-button variant="outlined" @click="router.push('/preview')">
         <icon-eye class="block md:hidden" />
         <span class="hidden md:block">Preview</span>
       </app-button>
