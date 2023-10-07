@@ -1,12 +1,5 @@
 import { defineStore } from "pinia";
-
-interface MyProfile {
-  firstName: string;
-  lastName: string;
-  email: string;
-  avatar: File;
-  previewAvatar: string;
-}
+import type { MyProfile } from "types/profile.interface";
 
 export const useMyProfileStore = defineStore("myProfile", () => {
   const myProfile = ref<MyProfile>({

@@ -1,13 +1,8 @@
 import { defineStore } from "pinia";
-import Dropdown from "types/dropdown.interface";
-
-interface profileLink {
-  platform: Dropdown;
-  link: string;
-}
+import type { Link } from "types/profile.interface";
 
 export const useMyLinksStore = defineStore("myLinks", () => {
-  const profileLinks = ref<profileLink[]>([]);
+  const profileLinks = ref<Link[]>([]);
 
   const profileLinksLength = computed(() => profileLinks.value.length);
 

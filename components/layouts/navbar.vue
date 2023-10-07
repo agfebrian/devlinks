@@ -6,6 +6,7 @@
     ]"
   >
     <div
+      v-if="!isPreview"
       class="flex items-center justify-between rounded-xl bg-white px-6 py-4"
     >
       <icon-devlinks />
@@ -29,6 +30,15 @@
       </div>
       <app-button variant="outlined">Preview</app-button>
     </div>
+    <div
+      v-else
+      class="flex items-center justify-between rounded-xl bg-white px-6 py-4"
+    >
+      <app-button variant="outlined" @click="router.push('/')">
+        Back to Editor
+      </app-button>
+      <app-button>Share Link</app-button>
+    </div>
   </header>
 </template>
 
@@ -38,10 +48,13 @@ import { useNavigation } from "@/store/use-navigation";
 
 interface Props {
   background?: "default" | "primary";
+  isPreview?: boolean;
 }
 
-withDefaults(defineProps<Props>(), { background: "default" });
+withDefaults(defineProps<Props>(), { background: "default", isPreview: false });
 
 const navStore = useNavigation();
 const { navigation, activeNav } = storeToRefs(navStore);
+
+const router = useRouter();
 </script>
