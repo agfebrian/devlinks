@@ -11,7 +11,7 @@
           <div class="p-10">
             <div class="flex flex-col gap-10">
               <div class="flex flex-col gap-2">
-                <h2 class="text-[32px] font-bold text-grey-dark">
+                <h2 class="text-[32px] font-bold leading-[48px] text-grey-dark">
                   {{ form.title }}
                 </h2>
                 <p class="text-base font-normal text-grey-default">
