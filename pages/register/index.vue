@@ -1,11 +1,14 @@
 <template>
-  <div class="flex h-full w-full flex-col items-center pt-[138px]">
-    <div class="flex w-[476px] flex-col gap-[51px]">
-      <div class="flex w-full justify-center">
+  <div class="flex h-full w-full flex-col items-center pt-0 md:pt-[138px]">
+    <div class="flex w-full flex-col gap-[51px] p-8 md:w-[476px] md:p-0">
+      <div
+        class="flex w-full items-center justify-start gap-[7.5px] md:justify-center"
+      >
+        <icon-logo />
         <icon-devlinks />
       </div>
       <!-- form -->
-      <div class="flex w-full flex-col gap-10 p-10">
+      <div class="flex w-full flex-col gap-10 p-0 md:p-10">
         <!-- head -->
         <div class="flex flex-col gap-2">
           <h1 class="text-[32px] font-bold text-grey-dark">Create account</h1>
