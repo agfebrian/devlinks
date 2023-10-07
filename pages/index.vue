@@ -2,7 +2,7 @@
   <layouts-container>
     <div class="flex w-full gap-6">
       <div
-        class="flex h-[786px] w-[512px] items-center justify-center rounded-xl bg-white p-6"
+        class="hidden h-[786px] w-[512px] items-center justify-center rounded-xl bg-white p-6 md:flex"
       >
         <app-frame-phone></app-frame-phone>
       </div>
@@ -96,7 +96,7 @@
               >
                 <icon-touched-phone />
                 <div
-                  class="flex w-[488px] flex-col items-center justify-center gap-6"
+                  class="flex w-full flex-col items-center justify-center gap-6 md:w-[488px]"
                 >
                   <h2 class="text-center text-3xl font-bold text-grey-dark">
                     Let's get you started
@@ -113,11 +113,17 @@
             </template>
             <template v-else>
               <div class="mt-10 flex flex-col gap-6">
-                <div class="flex items-center gap-4 p-5">
-                  <p class="w-[240px] text-base font-normal text-grey-default">
+                <div
+                  class="flex flex-col items-start gap-4 p-5 md:flex-row md:items-center"
+                >
+                  <p
+                    class="w-full text-base font-normal text-grey-default md:w-[240px]"
+                  >
                     Profile picture
                   </p>
-                  <div class="flex items-center gap-6">
+                  <div
+                    class="flex flex-col items-start gap-6 md:flex-row md:items-center"
+                  >
                     <app-upload-image
                       v-model="myProfileStore.myProfile.avatar"
                     />
@@ -128,7 +134,9 @@
                   </div>
                 </div>
                 <div class="flex flex-col gap-4 p-5">
-                  <div class="flex items-center gap-4">
+                  <div
+                    class="flex flex-col items-start gap-4 md:flex-row md:items-center"
+                  >
                     <p
                       class="w-[240px] text-base font-normal text-grey-default"
                     >
@@ -141,10 +149,12 @@
                       required="required"
                       :error="errors.firstName"
                       :icon="false"
-                      class="flex-1"
+                      class="w-full flex-1 md:w-fit"
                     />
                   </div>
-                  <div class="flex items-center gap-4">
+                  <div
+                    class="flex flex-col items-start gap-4 md:flex-row md:items-center"
+                  >
                     <p
                       class="w-[240px] text-base font-normal text-grey-default"
                     >
@@ -157,10 +167,12 @@
                       required="required"
                       :error="errors.lastName"
                       :icon="false"
-                      class="flex-1"
+                      class="w-full flex-1 md:w-fit"
                     />
                   </div>
-                  <div class="flex items-center gap-4">
+                  <div
+                    class="flex flex-col items-start gap-4 md:flex-row md:items-center"
+                  >
                     <p
                       class="w-[240px] text-base font-normal text-grey-default"
                     >
@@ -173,7 +185,7 @@
                       required="required|email"
                       :error="errors.email"
                       :icon="false"
-                      class="flex-1"
+                      class="w-full flex-1 md:w-fit"
                     />
                   </div>
                 </div>
@@ -181,7 +193,11 @@
             </template>
           </div>
           <div class="flex justify-end border-t border-t-grey-hover px-10 py-6">
-            <app-button type="submit" :disabled="myLinksLength == 0">
+            <app-button
+              class="w-full md:w-fit"
+              type="submit"
+              :disabled="myLinksLength == 0"
+            >
               Save
             </app-button>
           </div>
