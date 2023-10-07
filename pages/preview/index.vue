@@ -1,10 +1,10 @@
 <template>
   <div class="relative flex h-screen justify-center">
     <div
-      class="absolute left-0 top-0 h-[357px] w-full rounded-b-[32px] bg-primary-default"
+      class="absolute left-0 top-0 hidden h-[357px] w-full rounded-b-[32px] bg-primary-default md:block"
     ></div>
     <div
-      class="z-10 mt-[82px] flex h-fit flex-col items-center gap-[56px] rounded-3xl bg-white px-[56px] py-12 shadow-2xl"
+      class="z-10 mt-[50px] flex h-fit flex-col items-center gap-[56px] rounded-3xl bg-white px-[56px] py-0 shadow-none md:mt-[82px] md:py-12 md:shadow-2xl"
     >
       <div class="flex w-[237px] flex-col items-center gap-[25px]">
         <div
