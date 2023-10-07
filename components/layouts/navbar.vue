@@ -2,15 +2,15 @@
   <header
     :class="[
       background == 'default' ? 'bg-white' : 'bg-primary-default',
-      'sticky top-0 z-30 p-6',
+      'sticky top-0 z-30 p-0 md:p-6',
     ]"
   >
     <div
       v-if="!isPreview"
       class="flex items-center justify-between rounded-xl bg-white px-6 py-4"
     >
-      <icon-devlinks />
-      <div class="flex gap-4">
+      <app-logo />
+      <div class="flex gap-0 md:gap-4">
         <app-button
           v-for="(item, index) in navigation"
           :key="index"
@@ -25,10 +25,13 @@
         >
           <icon-link v-if="item.link == '/links'" :color="item.color" />
           <icon-profile v-else :color="item.color" />
-          {{ item.text }}
+          <span class="hidden md:block">{{ item.text }}</span>
         </app-button>
       </div>
-      <app-button variant="outlined">Preview</app-button>
+      <app-button variant="outlined">
+        <icon-eye class="block md:hidden" />
+        <span class="hidden md:block">Preview</span>
+      </app-button>
     </div>
     <div
       v-else
