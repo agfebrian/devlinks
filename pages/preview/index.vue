@@ -9,7 +9,16 @@
       <div class="flex w-[237px] flex-col items-center gap-[25px]">
         <div
           class="h-[104px] w-[104px] overflow-hidden rounded-full border-4 border-primary-default bg-black"
-        ></div>
+        >
+          <img
+            v-if="profile.previewAvatar"
+            :src="profile.previewAvatar"
+            :alt="`${profile.firstName} ${profile.lastName}`"
+            width="104"
+            height="104"
+            class="h-full w-full object-cover"
+          />
+        </div>
         <div class="flex flex-col items-center gap-2">
           <h2
             v-if="profile.firstName && profile.lastName"
@@ -59,4 +68,10 @@ definePageMeta({
 
 const previewStore = usePreview();
 const { profile } = storeToRefs(previewStore);
+
+// const showAvatar = computed(() =>
+//   profile.value!.avatar.length
+//     ? URL.createObjectURL(profile.value!.avatar)
+//     : "",
+// );
 </script>

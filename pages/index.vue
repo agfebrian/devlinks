@@ -212,6 +212,7 @@ import Dropdown from "types/dropdown.interface";
 import { useMyProfileStore } from "@/store/use-my-profile";
 import { useMyLinksStore } from "@/store/use-my-links";
 import { useNavigation } from "@/store/use-navigation";
+import { usePreview } from "@/store/use-preview";
 import { Form as FormVValidate, Field as FieldVValidate } from "vee-validate";
 
 definePageMeta({
@@ -221,6 +222,7 @@ definePageMeta({
 const navStore = useNavigation();
 const myProfileStore = useMyProfileStore();
 const myLinksStore = useMyLinksStore();
+const previewStore = usePreview();
 
 const myLinksLength = computed(() => myLinksStore.profileLinksLength);
 const form = computed(() => {
@@ -326,5 +328,12 @@ const handleSubmit = (_values: any, actions: any) => {
 
   // commit
   console.log("submitted");
+
+  previewStore.profile = {
+    ...myProfileStore.myProfile,
+    ...{
+      links: myLinksStore.profileLinks,
+    },
+  };
 };
 </script>
