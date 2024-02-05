@@ -213,6 +213,7 @@ import { useMyProfileStore } from "@/store/use-my-profile";
 import { useMyLinksStore } from "@/store/use-my-links";
 import { useNavigation } from "@/store/use-navigation";
 import { usePreview } from "@/store/use-preview";
+import { useAlert } from "@/store/use-alert";
 import { Form as FormVValidate, Field as FieldVValidate } from "vee-validate";
 
 definePageMeta({
@@ -223,6 +224,7 @@ const navStore = useNavigation();
 const myProfileStore = useMyProfileStore();
 const myLinksStore = useMyLinksStore();
 const previewStore = usePreview();
+const alertStore = useAlert();
 
 const myLinksLength = computed(() => myLinksStore.profileLinksLength);
 const form = computed(() => {
@@ -326,14 +328,16 @@ const handleSubmit = (_values: any, actions: any) => {
   }
   if (!isLinksValid) return;
 
-  // commit
-  console.log("submitted");
-
   previewStore.profile = {
     ...myProfileStore.myProfile,
     ...{
       links: myLinksStore.profileLinks,
     },
   };
+
+  alertStore.setAlert({
+    show: true,
+    message: "Your changes have been successfully saved!",
+  });
 };
 </script>

@@ -4,6 +4,7 @@
   <div>
     <slot />
   </div>
+  <app-alert />
 </template>
 
 <script setup lang="ts">
