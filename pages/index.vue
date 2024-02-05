@@ -311,11 +311,17 @@ const handleSubmit = (_values: any, actions: any) => {
   }
 
   // redirect to next step if input filled is valid
-  if (navStore.activeNav == "/links") {
+  if (
+    navStore.activeNav == "/links" &&
+    !myProfileStore.myProfile.firstName.length &&
+    !myProfileStore.myProfile.lastName.length &&
+    !myProfileStore.myProfile.email.length
+  ) {
     navStore.changeNav("/profile");
+    return;
   }
 
-  //redirect back if the user is not filled part of form link
+  // redirect back if the user is not filled part of form link
   let isLinksValid: boolean = true;
   const myLinks = myLinksStore.profileLinks.map((item) => item.link);
   for (let index = 0; index < myLinks.length; index++) {
